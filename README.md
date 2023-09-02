@@ -22,7 +22,6 @@ We have a fleet of **10 drones**. A drone is capable of carrying devices, other 
 small loads. For our use case **the load is medications**.
 
 A **Drone** has:
-
 - serial number (100 characters max);
 - model (Lightweight, Middleweight, Cruiserweight, Heavyweight);
 - weight limit (500gr max);
@@ -40,7 +39,6 @@ Develop a service via REST API that allows clients to communicate with the drone
 specific communicaiton with the drone is outside the scope of this task.
 
 The service should allow:
-
 - registering a drone;
 - loading a drone with medication items;
 - checking loaded medication items for a given drone;
