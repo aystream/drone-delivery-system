@@ -1,0 +1,26 @@
+@startuml
+package "Microservices Architecture" {
+
+  [gateway-service] as gateway
+  [config-service] as config
+  [discovery-service] as discovery
+  [drone-service] as drone
+  [medication-service] as medication
+
+  cloud {
+    [External Client]
+  }
+
+  database "Drone DB" as droneDB
+  database "Medication DB" as medicationDB
+
+  [External Client] --> gateway : Request
+  gateway --> config : Fetch Configurations
+  gateway --> discovery : Service Discovery
+  gateway --> drone : Drone related requests
+  gateway --> medication : Medication related requests
+
+  drone --> droneDB : Read/Write
+  medication --> medicationDB : Read/Write
+}
+@enduml
